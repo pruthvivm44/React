@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">//React-we use react because we add above 1st script to react 
+    //.component-to inherit all the base functionality of a component into this class
+        class App extends React.Component{
+        state={
+            name:'Pruthvi',
+            age:23
+        }
+
+        //onCopy function
+        handleCopy(e){
+            console.log('Yes its fine');
+        }
+
+        //class based components must have inside list1 function called render
+        render(){
+            return(
+            //it is JSX, we can write html codes inside javascript
+            //only one root elements inside div tag
+            //instead of class we use className in javascript
+            //{ }-we can output or results dynamic js contents inside this { } 
+            <div className="app-content">
+              <h1>Hey, ninjas</h1>
+              <p>My Name is {this.state.name} and I am {this.state.age} years old</p>
+              <p onCopy={this.handleCopy}>What We Think!</p>
+            </div>
+
+            )
+        }
+
+        }
+        //to create ReactDom
+                    //class  ,//where we want to rend
+        ReactDOM.render(<App />,document.getElementById('app'));
+
+    </script>
+</body>
